@@ -1,0 +1,31 @@
+<MainWidget>:
+    orientation: "vertical"
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: None
+        height: "40dp"
+
+        ToggleButton:
+            id: learning_btn
+            text: "学習モード"
+            group: "mode"
+            on_press: root.on_mode_switch(self)
+
+        ToggleButton:
+            id: classify_btn
+            text: "分類モード"
+            group: "mode"
+            state: "down"
+            on_press: root.on_mode_switch(self)
+
+    ScrollView:
+        id: scroll_view
+        do_scroll_x: True
+        do_scroll_y: True
+
+        BoxLayout:
+            id: content_box
+            orientation: "vertical"
+            size_hint_y: None
+            height: self.minimum_height
